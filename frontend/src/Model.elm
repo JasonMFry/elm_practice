@@ -9,4 +9,4 @@ type alias Model =
 
 init : Model
 init =
-    { str = "init", int = 0 }
+    { str = "init", int = 1 }
