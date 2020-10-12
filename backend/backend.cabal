@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 15a90a7963719a978f7a48f179a940a365580a36e8805e91c938840e8f42d1d5
+-- hash: a2d3e384d4a9829f16e8e526b0a97d31804974520f018e98caa236515f811b97
 
 name:           backend
 version:        0.1.0.0
@@ -26,14 +26,15 @@ source-repository head
   location: https://github.com/githubuser/backend
 
 library
-  exposed-modules:
-      Lib
   other-modules:
       Paths_backend
   hs-source-dirs:
       src
   build-depends:
       base >=4.7 && <5
+    , bytestring
+    , cassava
+    , vector
   default-language: Haskell2010
 
 executable backend-exe
@@ -46,6 +47,9 @@ executable backend-exe
   build-depends:
       backend
     , base >=4.7 && <5
+    , bytestring
+    , cassava
+    , vector
   default-language: Haskell2010
 
 test-suite backend-test
@@ -59,4 +63,7 @@ test-suite backend-test
   build-depends:
       backend
     , base >=4.7 && <5
+    , bytestring
+    , cassava
+    , vector
   default-language: Haskell2010
