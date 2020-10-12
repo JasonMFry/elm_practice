@@ -2,7 +2,9 @@ module Model exposing (Model, Test, TestStatus(..), init, statusToString)
 
 
 type alias Model =
-    List Test
+    { tests : List Test
+    , randomNumber : Float
+    }
 
 
 type alias Test =
@@ -18,15 +20,20 @@ type TestStatus
     | Failed
 
 
-init : Model
-init =
-    [ { description = "commas are rotated properly", status = NotStartedYet }
-    , { description = "exclamation points stand up straight", status = NotStartedYet }
-    , { description = "run-on sentences don't run forever", status = NotStartedYet }
-    , { description = "question marks curl down", status = NotStartedYet }
-    , { description = "semicolons are adequately waterproof", status = NotStartedYet }
-    , { description = "capital letters can do yoga", status = NotStartedYet }
-    ]
+init : () -> ( Model, Cmd msg )
+init _ =
+    ( { tests =
+            [ { description = "commas are rotated properly", status = NotStartedYet }
+            , { description = "exclamation points stand up straight", status = NotStartedYet }
+            , { description = "run-on sentences don't run forever", status = NotStartedYet }
+            , { description = "question marks curl down", status = NotStartedYet }
+            , { description = "semicolons are adequately waterproof", status = NotStartedYet }
+            , { description = "capital letters can do yoga", status = NotStartedYet }
+            ]
+      , randomNumber = 0
+      }
+    , Cmd.none
+    )
 
 
 statusToString : TestStatus -> String
