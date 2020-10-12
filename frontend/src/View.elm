@@ -10,14 +10,14 @@ view : Model -> Html Msg
 view model =
     main_ []
         [ h1 [] [ text "Tests" ]
-        , button [ onClick <| StartTests model.tests ] [ text "Start Tests" ]
+        , button [ onClick StartTests ] [ text "Start Tests" ]
         , span []
             [ p [] [ text "passed: " ]
             , p [] [ text "failed: " ]
             , p [] [ text "running: " ]
             ]
         , h2 [] [ text "FINISHED!" ]
-        , ol [] (List.map renderTest model.tests)
+        , ol [] (List.map renderTest model)
         ]
 
 
@@ -28,5 +28,4 @@ renderTest test =
 
 
 -- sortTests test1 test2 =
--- numberOfTestsInStatus : List Test -> Int
--- numberOfTestsInStatus tests =
+--     todo
