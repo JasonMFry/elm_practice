@@ -1,14 +1,16 @@
 module View exposing (view)
 
 import Html exposing (Html, button, h1, h2, li, main_, ol, p, span, text)
+import Html.Events exposing (onClick)
 import Model exposing (..)
+import Msg exposing (..)
 
 
-view : Model -> Html msg
+view : Model -> Html Msg
 view model =
     main_ []
         [ h1 [] [ text "Tests" ]
-        , button [] [ text "Start Tests" ]
+        , button [ onClick StartTests ] [ text "Start Tests" ]
         , span []
             [ p [] [ text "passed: " ]
             , p [] [ text "failed: " ]

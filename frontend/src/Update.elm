@@ -1,11 +1,11 @@
 module Update exposing (update)
 
-import Model exposing (Model)
+import Model exposing (..)
 import Msg exposing (Msg(..))
 
 
 update : Msg -> Model -> Model
 update msg model =
     case msg of
-        NoOp ->
-            model
+        StartTests ->
+            List.map (\m -> { m | status = Running }) model

@@ -1,4 +1,4 @@
-module Model exposing (Model, Test, init, statusToString)
+module Model exposing (Model, Test, TestStatus(..), init, statusToString)
 
 
 type alias Model =
